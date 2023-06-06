@@ -1,4 +1,8 @@
-# timer.py
+"""
+timer.py
+
+https://github.com/realpython/codetiming/tree/main
+"""
 
 import time
 from contextlib import ContextDecorator
