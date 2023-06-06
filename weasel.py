@@ -2,6 +2,7 @@
 weasel.py
 """
 from random import choice, choices, random
+from timer import Timer
 import string
 
 
@@ -20,6 +21,7 @@ def fitness(phrase):
     return fit / len(phrase) * 100
 
 
+@Timer()
 def main():
     parent = choices(CHARS, k=len(TARGET))
     i = 0
