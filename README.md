@@ -4,9 +4,6 @@ https://en.wikipedia.org/wiki/Weasel_program
 
 ## Overview
 
-In chapter 3 of his book The Blind Watchmaker, Dawkins gave the following 
-introduction to the program, referencing the well-known infinite monkey theorem:
-
 > I don't know who it was first pointed out that, given enough time, a monkey 
 bashing away at random on a typewriter could produce all the works of 
 Shakespeare. The operative phrase is, of course, given enough time. Let us 
@@ -14,7 +11,12 @@ limit the task facing our monkey somewhat. Suppose that he has to produce, not
 the complete works of Shakespeare but just the short sentence 'Methinks it is 
 like a weasel', and we shall make it relatively easy by giving him a typewriter 
 with a restricted keyboard, one with just the 28 (capital) letters, and a space 
-bar. How long will he take to write this one little sentence?
+bar. How long will he take to write this one little sentence? \
+> --<cite>Richard Dawkins, The Blind Watchmaker (1996 ed., p. 66)<cite>
+
+In chapter 3 of his book, The Blind Watchmaker, Dawkins references the 
+well-known [infinite monkey theorem](https://en.wikipedia.org/wiki/Infinite_monkey_theorem)
+and sets the stage for his weasel program.
 
 The scenario is staged to produce a string of gibberish letters, assuming that 
 the selection of each letter in a sequence of 28 characters will be random. The 
@@ -35,10 +37,12 @@ far fewer steps to reach any given target. In Dawkins's words:
 
 > We again use our computer monkey, but with a crucial difference in its 
 program. It again begins by choosing a random sequence of 28 letters, just as 
-before ... it duplicates it repeatedly, but with a certain chance of random 
+before... it duplicates it repeatedly, but with a certain chance of random 
 error – 'mutation' – in the copying. The computer examines the mutant nonsense 
 phrases, the 'progeny' of the original phrase, and chooses the one which, 
-however slightly, most resembles the target phrase, METHINKS IT IS LIKE A WEASEL.
+however slightly, most resembles the target phrase, METHINKS IT IS LIKE A 
+WEASEL.\
+> --<cite>Richard Dawkins, The Blind Watchmaker (1996 ed., p. 68)<cite>
 
 By repeating the procedure, a randomly generated sequence of 28 letters and 
 spaces will be gradually changed each generation. The sequences progress through 
@@ -65,7 +69,8 @@ time taken by *cumulative selection*, and the time which the same computer,
 working flat out at the same rate, would take to reach the target phrase if it 
 were forced to use the other procedure of *single-step selection*: about a 
 million million million million million years. This is more than a million 
-million million times as long as the universe has so far existed.
+million million times as long as the universe has so far existed.\
+> --<cite>Richard Dawkins, The Blind Watchmaker (1996 ed., p. 70)<cite>
 
 ## Algorithm
 
@@ -179,7 +184,7 @@ $ python -m timeit -c "$(cat weasel.py)" | tail -1
 
     10 loops, best of 5: 31.8 msec per loop
 
-... or 0.0318 seconds per loop
+... or 0.0318 seconds on average.
 
 ## Profile
 
