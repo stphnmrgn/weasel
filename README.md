@@ -21,11 +21,11 @@ and sets the stage for his weasel program.
 
 The scenario is staged to produce a string of gibberish letters, assuming that 
 the selection of each letter in a sequence of 28 characters will be random. The 
-number of possible combinations in this random sequence is $27^{28}$, or about 
-$10^{40}$, so the probability that the monkey will produce a given sequence is 
-extremely low. Any particular sequence of 28 characters could be selected as a 
-"target" phrase, all equally as improbable as Dawkins's chosen target, 
-"METHINKS IT IS LIKE A WEASEL".
+number of possible combinations in this random sequence is $(1/27)^{28}$, or 
+about 1 in 10,000 million million million million million million, so the 
+probability that the monkey will produce a given sequence is extremely low. Any 
+particular sequence of 28 characters could be selected as a "target" phrase, all 
+equally as improbable as Dawkins's chosen target, "METHINKS IT IS LIKE A WEASEL".
 
 A computer program could be written to carry out the actions of Dawkins's 
 hypothetical monkey, continuously generating combinations of 28 letters and 
@@ -91,9 +91,12 @@ correct and in the correct position).
 highest scoring string, and go to step 2.
 
 For these purposes, a 'character' is any uppercase letter, digit, punctuation,
-or a space. The number of copies per generation, and the chance of mutation per letter are not specified in Dawkins's book; 100 copies and a 5% mutation rate are examples. Correct letters are not 'locked'; each correct letter may become 
-incorrect in subsequent generations. The terms of the program and the existence of the target phrase do however mean that such 'negative mutations' will quickly be 
-'corrected'. 
+or a space. The number of copies per generation, and the chance of mutation per 
+letter are not specified in Dawkins's book; 100 copies and a 5% mutation rate 
+are examples. Correct letters are not 'locked'; each correct letter may become 
+incorrect in subsequent generations. The terms of the program and the existence 
+of the target phrase do however mean that such 'negative mutations' will quickly 
+be 'corrected'. 
 
 # Timing
 
