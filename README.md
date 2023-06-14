@@ -90,12 +90,9 @@ correct and in the correct position).
 5. If any of the new strings has a perfect score (28), halt. Otherwise, take the
 highest scoring string, and go to step 2.
 
-For these purposes, a 'character' is any uppercase letter, or a space. The 
-number of copies per generation, and the chance of mutation per letter are not 
-specified in Dawkins's book; 100 copies and a 5% mutation rate are examples. 
-Correct letters are not 'locked'; each correct letter may become incorrect in 
-subsequent generations. The terms of the program and the existence of the 
-target phrase do however mean that such 'negative mutations' will quickly be 
+For these purposes, a 'character' is any uppercase letter, digit, punctuation,
+or a space. The number of copies per generation, and the chance of mutation per letter are not specified in Dawkins's book; 100 copies and a 5% mutation rate are examples. Correct letters are not 'locked'; each correct letter may become 
+incorrect in subsequent generations. The terms of the program and the existence of the target phrase do however mean that such 'negative mutations' will quickly be 
 'corrected'. 
 
 # Timing

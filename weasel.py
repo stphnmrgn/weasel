@@ -107,6 +107,6 @@ if __name__ == "__main__":
     )
     args = parser.parse_args()
 
-    CHARS = string.ascii_uppercase + " "
+    CHARS = string.ascii_uppercase + string.digits + string.punctuation + " "
     target = list(args.target.upper())
     main(target, args.probability, args.children)
