@@ -7,6 +7,9 @@ from timer import Timer
 import string
 
 
+CHARS = string.ascii_uppercase + string.digits + string.punctuation + " "
+
+
 def reproduce(phrase: list[str], p: float) -> list[str]:
     """
     Return mutated list of characters
@@ -46,7 +49,7 @@ def fitness(phrase: list[str]) -> float:
 
 
 @Timer()
-def main(target: list[str], p: float, c: int):
+def main(target: list[str], p: float, c: int) -> None:
     """
     _summary_
 
@@ -82,21 +85,23 @@ def main(target: list[str], p: float, c: int):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(
-        prog="Weasel", formatter_class=argparse.MetavarTypeHelpFormatter
+        prog="Weasel",
+        description="Weasel algorithm showcasing cumulative selection",
+        formatter_class=argparse.MetavarTypeHelpFormatter,
     )
     parser.add_argument(
         "-t",
         "--target",
         type=str,
         default="METHINKS IT IS LIKE A WEASEL",
-        help="a string to target",
+        help="A string to target",
     )
     parser.add_argument(
         "-p",
         "--probability",
         type=float,
         default=0.05,
-        help="mutation probability between generations, by default 0.05",
+        help="Mutation probability between generations, by default 0.05",
     )
     parser.add_argument(
         "-c",
@@ -105,8 +110,15 @@ if __name__ == "__main__":
         default=100,
         help="Number of children in each generation, by default 100",
     )
+
     args = parser.parse_args()
 
-    CHARS = string.ascii_uppercase + string.digits + string.punctuation + " "
+    if args.probability <= 0:
+        parser.error(message="Probability must be positive")
+
+    if args.children <= 0:
+        parser.error(message="Number of children must be positive")
+
     target = list(args.target.upper())
+
     main(target, args.probability, args.children)
