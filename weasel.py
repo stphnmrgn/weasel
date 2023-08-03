@@ -64,21 +64,23 @@ def main():
 
 
     parser = argparse.ArgumentParser(
-        prog="Weasel", formatter_class=argparse.MetavarTypeHelpFormatter
+        prog="Weasel",
+        description="Weasel algorithm showcasing cumulative selection",
+        formatter_class=argparse.MetavarTypeHelpFormatter,
     )
     parser.add_argument(
         "-t",
         "--target",
         type=str,
         default="METHINKS IT IS LIKE A WEASEL",
-        help="a string to target",
+        help="A string to target",
     )
     parser.add_argument(
         "-p",
         "--probability",
         type=float,
         default=0.05,
-        help="mutation probability between generations, by default 0.05",
+        help="Mutation probability between generations, by default 0.05",
     )
     parser.add_argument(
         "-c",
