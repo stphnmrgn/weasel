@@ -5,7 +5,7 @@ import argparse
 import string
 from random import choice, choices, random
 
-from timer import Timer
+from .timer import Timer
 
 
 def _chars():
@@ -43,7 +43,6 @@ def _reproduce(chars: str, phrase: list[str], p: float) -> list[str]:
 
 @Timer()
 def main():
-    
     def _fitness(phrase: list[str]) -> float:
         """
         The percent of letters in phrase that match and in the same position as
@@ -61,7 +60,6 @@ def main():
         """
         fit = sum(t == h for t, h in zip(phrase, target))
         return fit / len(phrase) * 100
-
 
     parser = argparse.ArgumentParser(
         prog="Weasel",
